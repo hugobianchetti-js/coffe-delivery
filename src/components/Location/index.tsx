@@ -18,7 +18,6 @@ export default function LocationButton(){
 
         fetch(`https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`).then(
             async response => {
-                console.log("EFFECT");
                 const json = await response.json();
                 const city = json['address']['city'];
                 const stateCode = String(json['address']['ISO3166-2-lvl4']);
