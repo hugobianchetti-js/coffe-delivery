@@ -3,18 +3,21 @@ import { globalStyles } from "./styles/global"
 import { BaseLayout } from "./layouts/BaseLayout";
 import Home from "./pages/Home";
 import Cart from "./pages/Cart";
+import { CookiesProvider } from "react-cookie";
 
 export default function App() {
   globalStyles();
 
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<BaseLayout />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/cart" element={<Cart />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <CookiesProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<BaseLayout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/cart" element={<Cart />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </CookiesProvider>
   )
 }
