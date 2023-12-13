@@ -1,5 +1,18 @@
 import { styled } from "../../../stitches.config";
 import sectionBackground from "../../assets/sectionBackground.png";
+import Button from "../../components/Button";
+
+
+export const HomeContainer = styled("div", {
+    "& > h1": {
+        fontFamily: "Baloo-2, sans-serif",
+        fontWeight: "800",
+        fontSize: "2rem",
+        marginBottom: "2rem",
+        position: "absolute",
+        top: "calc(100vh + 20px)"
+    }
+});
 
 export const HomeBannerBackground = styled("div", {
     position: "absolute",
@@ -20,6 +33,11 @@ export const HomeBanner = styled("div", {
     justifyContent: "space-between",
     alignContent: "center",
     color: "$title",
+
+    [`& ${Button}`]: {
+        marginTop: "4.5rem",
+        width: "21rem",
+    },
 
     "& > div": {
         marginTop: "5.8rem",
@@ -51,6 +69,17 @@ export const HomeBanner = styled("div", {
     '@media(max-width:820px)': {
         "& br": {
             display: "none"
+        },
+    },
+
+    '@media(max-width:632px)': {
+        "& > div": {
+            marginTop: "3rem",
+        },
+
+        [`& ${Button}`]: {
+            marginTop: "3rem",
+            width: "100%",
         },
     },
 

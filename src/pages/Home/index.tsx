@@ -1,14 +1,16 @@
-import { FeatureSection, HomeBanner, HomeBannerBackground } from "./styles";
+import { FeatureSection, HomeBanner, HomeBannerBackground, HomeContainer } from "./styles";
 import cartIcon from "../../assets/cartIcon.svg";
 import boxIcon from "../../assets/boxIcon.svg";
 import timeIcon from "../../assets/timeIcon.svg";
 import coffeeIcon from "../../assets/coffeeIcon.svg";
 import coffee from "../../assets/coffee.svg";
+import Button from "../../components/Button";
+import { CaretDown } from "@phosphor-icons/react";
 
 
 export default function Home(){
     return (
-        <div>
+        <HomeContainer>
             <HomeBannerBackground/>
             <HomeBanner>
                 <div>
@@ -20,9 +22,11 @@ export default function Home(){
                         <div><img src={timeIcon} alt="" /><label>Fast and tracked delivery</label></div>
                         <div><img src={coffeeIcon} alt="" /><label>The coffee arrives fresh to you</label></div>
                     </FeatureSection>
+                    <Button onClick={()=>{}} icon={<CaretDown size={18} weight="bold" />}>Check it out</Button>
                 </div>
                 <img src={coffee} alt="" />
             </HomeBanner>
-        </div>
+            <h1>Our Coffees</h1>
+        </HomeContainer>
     );
 }
