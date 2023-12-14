@@ -1,7 +1,7 @@
 import { ButtonContainer, ButtonIcon } from "./styles";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-    children : React.ReactNode;
+    children? : React.ReactNode;
     icon?: React.ReactNode;
 }
 

@@ -11,7 +11,7 @@ export const HomeContainer = styled("div", {
         marginBottom: "2rem",
         position: "absolute",
         top: "calc(100vh + 20px)"
-    }
+    },
 });
 
 export const HomeBannerBackground = styled("div", {
@@ -40,7 +40,7 @@ export const HomeBanner = styled("div", {
     },
 
     "& > div": {
-        marginTop: "5.8rem",
+        marginTop: "9.8rem",
     },
 
     "& h1": {
@@ -74,7 +74,7 @@ export const HomeBanner = styled("div", {
 
     '@media(max-width:632px)': {
         "& > div": {
-            marginTop: "3rem",
+            marginTop: "5rem",
         },
 
         [`& ${Button}`]: {
@@ -102,4 +102,48 @@ export const FeatureSection = styled("div", {
         marginLeft: "10px",
     }
 
+});
+
+export const CoffeesSection = styled("div", {
+    position: "absolute",
+    top: "calc(100vh + 160px)",
+    paddingRight: "11%",
+    display: "grid",
+    gridGap: "2.5rem 2.5rem",
+    gridTemplateColumns: "1fr 1fr 1fr 1fr",
+    paddingBottom: "8rem",
+
+    '@media(max-width:1800px)': {
+        gridTemplateColumns: "1fr 1fr 1fr 1fr",
+        gridGap: "2.5rem 0.8rem",
+    },
+
+    '@media(max-width:1600px)': {
+        gridTemplateColumns: "1fr 1fr 1fr",
+        gridGap: "2.5rem 3rem",
+    },
+
+    '@media(max-width:1400px)': {
+        gridTemplateColumns: "1fr 1fr 1fr",
+        gridGap: "2.5rem 0.8rem",
+    },
+
+    '@media(max-width:1200px)': {
+        gridTemplateColumns: "1fr 1fr",
+        gridGap: "2.5rem 3rem",
+    },
+
+    '@media(max-width:800px)': {
+        gridTemplateColumns: "1fr 1fr",
+        gridGap: "2.5rem 0.8rem",
+    },
+
+    '@media(max-width:780px)': {
+        gridTemplateColumns: "1fr",
+        gridGap: "3.5rem 0.1rem",
+    },
+
+    '@media(max-width:640px)': {
+        paddingRight: "6%",
+    },
 });

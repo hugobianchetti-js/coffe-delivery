@@ -1,4 +1,4 @@
-import { FeatureSection, HomeBanner, HomeBannerBackground, HomeContainer } from "./styles";
+import { CoffeesSection, FeatureSection, HomeBanner, HomeBannerBackground, HomeContainer } from "./styles";
 import cartIcon from "../../assets/cartIcon.svg";
 import boxIcon from "../../assets/boxIcon.svg";
 import timeIcon from "../../assets/timeIcon.svg";
@@ -6,9 +6,17 @@ import coffeeIcon from "../../assets/coffeeIcon.svg";
 import coffee from "../../assets/coffee.svg";
 import Button from "../../components/Button";
 import { CaretDown } from "@phosphor-icons/react";
-
+import { coffees } from '../../../data.json'
+import CoffeeCard from "../../components/CoffeeCard";
+import { useRef } from "react";
 
 export default function Home(){
+    const coffeSectionRef : React.RefObject<HTMLHeadingElement> = useRef(null);
+
+    function handleScrollToCoffeeSection(){
+        coffeSectionRef.current?.scrollIntoView({ behavior: 'smooth' });
+    }
+
     return (
         <HomeContainer>
             <HomeBannerBackground/>
@@ -22,11 +30,14 @@ export default function Home(){
                         <div><img src={timeIcon} alt="" /><label>Fast and tracked delivery</label></div>
                         <div><img src={coffeeIcon} alt="" /><label>The coffee arrives fresh to you</label></div>
                     </FeatureSection>
-                    <Button onClick={()=>{}} icon={<CaretDown size={18} weight="bold" />}>Check it out</Button>
+                    <Button onClick={handleScrollToCoffeeSection} icon={<CaretDown size={18} weight="bold" />}>Check it out</Button>
                 </div>
                 <img src={coffee} alt="" />
             </HomeBanner>
-            <h1>Our Coffees</h1>
+            <h1 ref={coffeSectionRef}>Our Coffees</h1>
+            <CoffeesSection>
+                {coffees.map((coffee => <CoffeeCard key={coffee.id} coffee={coffee}/>))}
+            </CoffeesSection>
         </HomeContainer>
     );
 }
